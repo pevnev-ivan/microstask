@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Button} from "../UniversalButton/button";
-
+import s from './UseStateHomeWork.module.css'
 export const UseStateHomeWork = () => {
 
 
@@ -22,7 +22,7 @@ let [a, setA] = useState(1)
     return (
         <div>
            <h1>UseState HomeWork</h1>
-            <div> {a}</div>
+            <div className={s.Counter}> {a}</div>
             <Button name={'Increase'} callBack={()=>NumberManipulation(1)}/>
             <Button name={'Decrease'} callBack={()=>NumberManipulation(2)}/>
             <Button name={'Zero'} callBack={()=>NumberManipulation(3)}/>

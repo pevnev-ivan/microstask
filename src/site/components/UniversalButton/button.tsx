@@ -1,3 +1,4 @@
+import s from './button.module.css'
 
 type ButtonType = {
     name: string
@@ -11,7 +12,7 @@ export const Button=(props:ButtonType)=> {
     }
     return(
         <span>
-          <button onClick={onClickHandler}>{props.name}</button>
+          <button className={s.Button} onClick={onClickHandler}>{props.name}</button>
         </span>
     )
 }
