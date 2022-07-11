@@ -11,7 +11,7 @@ type StudentType = {
 }
 
 const StudentsList = (props: StudentsList) => {
-    return <div> <h1>Students Classwork</h1>
+    return <div className={s.Container}> <h1>Students Classwork</h1>
 
         <div className={s.StudentList}>
         {props.students.map((ObjectFromStudentType, index) => {

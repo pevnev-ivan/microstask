@@ -35,9 +35,6 @@ function App() {
         { banknots: 'RUBLS', value: 50, number: ' v1234567890' },
     ])
 
-
-
-
     return (
         <div className="App">
             <div className={'Container'}>

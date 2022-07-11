@@ -12,6 +12,7 @@ type TopCarsArr = {
 
 
 const Cars = (props: TypeTopCars) => {
+
     return <div>
         <h1>Cars HomeWork</h1>
         <div>
