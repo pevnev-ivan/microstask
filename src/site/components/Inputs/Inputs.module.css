@@ -1,0 +1,10 @@
+.Inputs__Container {
+    display: flex;
+    justify-content: center;
+    border: 2px solid #ece9e0;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 10px 10px;
+}

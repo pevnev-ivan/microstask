@@ -5,14 +5,44 @@ import Cars from "./site/components/CarsTable/CarsTable";
 import StudentsList from "./site/components/StudentsList/StudentsList";
 import {UseStateHomeWork} from "./site/components/UseStateHomeWork/UseStateHomeWork";
 import {MoneyCurrency} from "./site/components/MoneyCurrency/MoneyCurrency";
-
-
+import Inputs from "./site/components/Inputs/Inputs";
 
 function App() {
+
+    const addMessage = (title: string, id: number) => {
+        switch (id) {
+            case 1:
+                setMessageL([{message: title}, ...messageL])
+                title = '';
+                break;
+            case 2:
+                alert(id)
+                setMessageR([{message: title}, ...messageL])
+                title = '';
+                break;
+        }
+    }
+
+    let [messageL, setMessageL] = useState(
+        [
+            {message: 'message1'},
+            {message: 'message2'},
+            {message: 'message3'}
+        ]
+    )
+
+    let [messageR, setMessageR] = useState(
+        [
+            {message: 'message1'},
+            {message: 'message2'},
+            {message: 'message3'}
+        ]
+    )
+
     const topCars = [
-        {manufacturer:'BMW', model:'m5cs'},
-        {manufacturer:'Mercedes', model:'e63s'},
-        {manufacturer:'Audi', model:'rs6'}
+        {manufacturer: 'BMW', model: 'm5cs'},
+        {manufacturer: 'Mercedes', model: 'e63s'},
+        {manufacturer: 'Audi', model: 'rs6'}
     ]
 
     const students = [
@@ -25,26 +55,24 @@ function App() {
     ]
 
     const [money, setMoney] = useState([
-        { banknots: 'Dollars', value: 100, number: ' a1234567890' },
-        { banknots: 'Dollars', value: 50, number: ' z1234567890' },
-        { banknots: 'RUBLS', value: 100, number: ' w1234567890' },
-        { banknots: 'Dollars', value: 100, number: ' e1234567890' },
-        { banknots: 'Dollars', value: 50, number: ' c1234567890' },
-        { banknots: 'RUBLS', value: 100, number: ' r1234567890' },
-        { banknots: 'Dollars', value: 50, number: ' x1234567890' },
-        { banknots: 'RUBLS', value: 50, number: ' v1234567890' },
+        {banknots: 'Dollars', value: 100, number: ' a1234567890'},
+        {banknots: 'Dollars', value: 50, number: ' z1234567890'},
+        {banknots: 'RUBLS', value: 100, number: ' w1234567890'},
+        {banknots: 'Dollars', value: 100, number: ' e1234567890'},
+        {banknots: 'Dollars', value: 50, number: ' c1234567890'},
+        {banknots: 'RUBLS', value: 100, number: ' r1234567890'},
+        {banknots: 'Dollars', value: 50, number: ' x1234567890'},
+        {banknots: 'RUBLS', value: 50, number: ' v1234567890'},
     ])
 
     return (
         <div className="App">
             <div className={'Container'}>
-            <StudentsList students={students}/>
-            <Cars topCars={topCars}/>
-            <UseStateHomeWork/>
-            <MoneyCurrency money={money} />
-
-
-
+                <StudentsList students={students}/>
+                <Cars topCars={topCars}/>
+                <UseStateHomeWork/>
+                <MoneyCurrency money={money}/>
+                <Inputs messageR={messageR} messageL={messageL} addMessage={addMessage}/>
 
 
             </div>

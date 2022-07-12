@@ -1,0 +1,22 @@
+.FullInput__Messages {
+    /*background: #ece9e0;*/
+
+    border: 2px solid #ece9e0;
+    border-radius: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.FullInput {
+
+}
+
+.FullInput__Button {
+    margin: 10px;
+}
+
+.FullInput__Messages_R {
+    margin-top: 5px;
+}
