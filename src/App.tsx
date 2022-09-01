@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
 
-import Cars from "./site/components/CarsTable/CarsTable";
-import StudentsList from "./site/components/StudentsList/StudentsList";
-import {UseStateHomeWork} from "./site/components/UseStateHomeWork/UseStateHomeWork";
-import {MoneyCurrency} from "./site/components/MoneyCurrency/MoneyCurrency";
-import Inputs from "./site/components/Inputs/Inputs";
+import Cars from "./site/componentsMicrotasks/CarsTable/CarsTable";
+import StudentsList from "./site/componentsMicrotasks/StudentsList/StudentsList";
+import {UseStateHomeWork} from "./site/componentsMicrotasks/UseStateHomeWork/UseStateHomeWork";
+import {MoneyCurrency} from "./site/componentsMicrotasks/MoneyCurrency/MoneyCurrency";
+import Inputs from "./site/componentsMicrotasks/Inputs/Inputs";
+import ReactLearning from "./site/componentsReactLearning/ReactLearning";
 
 function App() {
 
@@ -73,6 +74,7 @@ function App() {
                 <UseStateHomeWork/>
                 <MoneyCurrency money={money}/>
                 <Inputs messageR={messageR} messageL={messageL} addMessage={addMessage}/>
+                <ReactLearning/>
 
 
             </div>
