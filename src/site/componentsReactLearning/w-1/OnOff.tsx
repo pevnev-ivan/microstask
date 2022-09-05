@@ -1,19 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-type OnOfftype = {
-    trigger: boolean
-    ChangeLight: () => void
-}
+const OnOff = () => {
 
-const OnOff = (props: OnOfftype) => {
-    let color = ''
-    props.trigger ? color = 'white' : color = 'darkgreen'
+    const [trigger, setTrigger] = useState<boolean>(false)
+
+    let indicator = {
+        padding: '5px 15px',
+        margin: '5px',
+        borderRadius: '15px',
+        border: '2px solid white',
+        opacity: !trigger ? '50%' : '100%',
+        backgroundColor: trigger ? '' : 'rgba(0, 0, 0, 0.2)'
+    }
+    let onStyle = {
+        opacity: trigger ? '50%' : '100%',
+        backgroundColor: trigger ? 'rgba(0, 0, 0, 0.2)' : '',
+    }
+    let offStyle = {
+        opacity: !trigger ? '50%' : '100%',
+        backgroundColor: !trigger ? 'rgba(0, 0, 0, 0.2)' : '',
+    }
+
+
 
     return (
         <div>
-            <button onClick={props.ChangeLight}>On</button>
-            <button onClick={props.ChangeLight}>Off</button>
-            <span style={{color: color}}> ⬤ </span>
+            <button style={onStyle} onClick={()=>setTrigger(!trigger)}>On</button>
+            <button style={offStyle} onClick={()=>setTrigger(!trigger)}>Off</button>
+            <span style={indicator}></span>
         </div>
     );
 };

@@ -1,15 +1,19 @@
 import React from 'react';
 
 type StarType = {
- selected: boolean
+    halfSelected: boolean
+    selected: boolean
 }
 
 const Star = (props: StarType) => {
 
-    let color = props.selected ? 'white' : 'black'
 
+    let startStyle = {
+        opacity: props.selected ? '' : props.halfSelected ? '50%' : '',
+        color: props.selected ? 'white' : props.halfSelected ? 'white' : 'black'
+    }
     return (
-        <span style={{color: color}}>★ </span>
+        <span style={startStyle}>★ </span>
     );
 };
 

@@ -2,12 +2,11 @@ import React from 'react';
 
 type PropsType = {
     title: string
-    CollapseMenu: () => void
 }
 
 const AccordionTitle = (props: PropsType) => {
     return (
-        <h3 onClick={props.CollapseMenu}>
+        <h3>
             {props.title}
         </h3>
     );

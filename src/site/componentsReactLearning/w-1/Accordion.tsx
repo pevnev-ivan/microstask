@@ -1,19 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AccordionTitle from "./AccordionTitle";
 import AccordionBody from "./AccordionBody";
 
 type PropsType = {
     title: string
-    collapsed: boolean
-    CollapseMenu: () => void
 }
 
 const Accordion = (props: PropsType) => {
 
+    const [collapsed, setCollapsed] = useState<boolean>(false)
         return (
             <div>
-                <AccordionTitle CollapseMenu={props.CollapseMenu} title={props.title}/>
-                {!props.collapsed && <AccordionBody/>}
+                <div onClick={()=>{setCollapsed(!collapsed)}}><AccordionTitle title={props.title}/></div>
+                {!collapsed && <AccordionBody/>}
             </div>
         )
 
