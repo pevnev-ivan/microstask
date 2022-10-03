@@ -1,5 +1,4 @@
 import React, {ChangeEvent} from 'react';
-import s from "../FullInput/FullInput.module.css";
 
 
 type MessageType = {

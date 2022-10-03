@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
-import s from './ReactW1.module.css'
+import s from '../w-1/ReactW1.module.css'
 
 type ValueByChangeType = { onChangeHandler: (actualValue: string) => void }
 type ValueByPressEnter = { onPressHandler: (actualValue: string) => void }
