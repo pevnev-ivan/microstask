@@ -7,6 +7,7 @@ import {UseStateHomeWork} from "./site/componentsMicrotasks/UseStateHomeWork/Use
 import {MoneyCurrency} from "./site/componentsMicrotasks/MoneyCurrency/MoneyCurrency";
 import Inputs from "./site/componentsMicrotasks/Inputs/Inputs";
 import ReactLearning from "./site/componentsReactLearning/ReactLearning";
+import AdditionalLessons from "./site/AdditionalLessons/AdditionalLessons";
 
 function App() {
 
@@ -75,6 +76,7 @@ function App() {
                 <MoneyCurrency money={money}/>
                 <Inputs messageR={messageR} messageL={messageL} addMessage={addMessage}/>
                 <ReactLearning/>
+                <AdditionalLessons/>
 
 
             </div>

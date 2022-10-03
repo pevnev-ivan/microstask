@@ -9,8 +9,8 @@ const OnOff = () => {
         margin: '5px',
         borderRadius: '15px',
         border: '2px solid white',
-        opacity: !trigger ? '50%' : '100%',
-        backgroundColor: trigger ? '' : 'rgba(0, 0, 0, 0.2)'
+        opacity: trigger ? '50%' : '100%',
+        backgroundColor: !trigger ? '' : 'rgba(0, 0, 0, 0.2)'
     }
     let onStyle = {
         opacity: trigger ? '50%' : '100%',

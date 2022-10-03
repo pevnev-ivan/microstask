@@ -1,0 +1,75 @@
+import React, {ChangeEvent, useRef, useState} from 'react';
+import s from './ReactW1.module.css'
+
+type ValueByChangeType = { onChangeHandler: (actualValue: string) => void }
+type ValueByPressEnter = { onPressHandler: (actualValue: string) => void }
+type ValueByClickBtn = { onClickHandler: (actualValue: string) => void }
+
+const UncontrolledComponents = () => {
+    const [value, setValue] = useState({
+        ValueByChange: '',
+        ValueByPress: '',
+        ValueByClick: '',
+    })
+
+    const onChangeHandler = (actualValue: string) => {
+        setValue({...value, ValueByChange: actualValue})
+    }
+
+    const onPressHandler = (actualValue: string) => {
+        setValue({...value, ValueByPress: actualValue})
+    }
+
+    const onClickHandler = (actualValue: string) => {
+        setValue({...value, ValueByClick: actualValue})
+    }
+
+    return (
+        <div className={s.container}>
+            <TrackValueOfUncontrolledInput onChangeHandler={onChangeHandler}/>
+            <GetValueOfUncontrolledInputByPress onPressHandler={onPressHandler}/>
+            <GetValueOfUncontrolledInputByClick onClickHandler={onClickHandler}/>
+
+
+            <p className={s.Values}> ValueOfUncontrolledInput ByChange: {value.ValueByChange}</p>
+            <p className={s.Values}> ValueOfUncontrolledInput ByPress: {value.ValueByPress}</p>
+            <p className={s.Values}> ValueOfUncontrolledInput ByPress: {value.ValueByClick}</p>
+        </div>
+    );
+};
+
+
+const TrackValueOfUncontrolledInput = (props: ValueByChangeType) => {
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        let actualValue = e.currentTarget.value
+        props.onChangeHandler(actualValue)
+    }
+    return (<div><input onChange={onChangeHandler}/></div>
+    )
+}
+const GetValueOfUncontrolledInputByPress = (props: ValueByPressEnter) => {
+    const onPressHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            let actualValue = e.currentTarget.value
+            props.onPressHandler(actualValue)
+        }
+    }
+    return (<div><input onKeyDown={onPressHandler}/></div>
+    )
+}
+
+const GetValueOfUncontrolledInputByClick = (props: ValueByClickBtn) => {
+    const inputRef = useRef<HTMLInputElement>(null)
+    const onClickHandler = () => {
+        let actualValue = inputRef.current && inputRef.current.value
+        actualValue && props.onClickHandler(actualValue)
+    }
+    return (<div>
+            <input ref={inputRef} style={{marginLeft:'65px'}}/>
+            <button style={{width: '50px', height: '50px'}} onClick={onClickHandler}>+</button>
+    </div>
+    )
+}
+
+export default UncontrolledComponents;
+

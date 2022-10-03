@@ -12,6 +12,7 @@ const Star = (props: StarType) => {
         opacity: props.selected ? '' : props.halfSelected ? '50%' : '',
         color: props.selected ? 'white' : props.halfSelected ? 'white' : 'black'
     }
+
     return (
         <span style={startStyle}>★ </span>
     );
