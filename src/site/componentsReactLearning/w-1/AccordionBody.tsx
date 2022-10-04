@@ -1,11 +1,19 @@
 import React from 'react';
 
-const AccordionBody = () => {
+type UsersType = {
+    id: string,
+    name: string
+}
+type PropsType = {
+    users: Array<UsersType>
+    onClickAccordionFn: (id: string, name: string) => void
+}
+
+const AccordionBody = (props: PropsType) => {
     return (
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            {props.users.map((el, index) =>
+                <li onClick={() => props.onClickAccordionFn(el.id, el.name)} key={el.id}>{el.name}</li>)}
         </ul>
     );
 };

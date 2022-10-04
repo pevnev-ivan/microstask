@@ -1,0 +1,23 @@
+
+
+.selectContainer {
+    background-color: #1e987c;
+    border: solid whitesmoke 2px;
+    width: 200px;
+    height: fit-content;
+}
+
+.selectContainer li {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.selectOptionsOpen {
+    position: absolute;
+
+}
+
+.hoveredItem {
+
+background-color: #0e5857;
+}

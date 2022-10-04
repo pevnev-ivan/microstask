@@ -77,8 +77,6 @@ function App() {
                 <Inputs messageR={messageR} messageL={messageL} addMessage={addMessage}/>
                 <ReactLearning/>
                 <AdditionalLessons/>
-
-
             </div>
         </div>
     );

@@ -1,15 +1,19 @@
 .container {
     display: flex;
     gap: 20px;
-    flex-direction: column;
-
-
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-
+    margin: 20px auto;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
 }
 
 .Values {
     color: white;
-    display: inline-block;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+
 }

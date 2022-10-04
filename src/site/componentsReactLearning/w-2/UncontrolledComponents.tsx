@@ -25,15 +25,17 @@ const UncontrolledComponents = () => {
     }
 
     return (
-        <div className={s.container}>
-            <TrackValueOfUncontrolledInput onChangeHandler={onChangeHandler}/>
-            <GetValueOfUncontrolledInputByPress onPressHandler={onPressHandler}/>
-            <GetValueOfUncontrolledInputByClick onClickHandler={onClickHandler}/>
-
-
-            <p className={s.Values}> ValueOfUncontrolledInput ByChange: {value.ValueByChange}</p>
-            <p className={s.Values}> ValueOfUncontrolledInput ByPress: {value.ValueByPress}</p>
-            <p className={s.Values}> ValueOfUncontrolledInput ByPress: {value.ValueByClick}</p>
+        <div className={s.container} style={{width: 'fit-content',padding: '20px', border: 'solid white 2px', borderRadius: '20px'}}>
+            <div >
+                <TrackValueOfUncontrolledInput onChangeHandler={onChangeHandler}/>
+                <GetValueOfUncontrolledInputByPress onPressHandler={onPressHandler}/>
+                <GetValueOfUncontrolledInputByClick onClickHandler={onClickHandler}/>
+            </div>
+            <div style={{display: 'flex', flexDirection:'column', gap: '32px', width: '400px',alignItems: 'flex-start'}}>
+                <p className={s.Values}> ValueOfUncontrolledInput ByChange: {value.ValueByChange}</p>
+                <p className={s.Values}> ValueOfUncontrolledInput ByEnter: {value.ValueByPress}</p>
+                <p className={s.Values}> ValueOfUncontrolledInput ByClick: {value.ValueByClick}</p>
+            </div>
         </div>
     );
 };
@@ -64,10 +66,10 @@ const GetValueOfUncontrolledInputByClick = (props: ValueByClickBtn) => {
         let actualValue = inputRef.current && inputRef.current.value
         actualValue && props.onClickHandler(actualValue)
     }
-    return (<div>
-            <input ref={inputRef} style={{marginLeft:'65px'}}/>
-            <button style={{width: '50px', height: '50px'}} onClick={onClickHandler}>+</button>
-    </div>
+    return (<div style={{display:'flex', justifyContent:'center', alignItems: 'center'}}>
+            <input ref={inputRef} style={{marginLeft: '65px'}}/>
+            <button style={{width: '41px', height: '41px'}} onClick={onClickHandler}></button>
+        </div>
     )
 }
 

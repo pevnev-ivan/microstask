@@ -5,20 +5,30 @@ import PageTitle from "./w-1/PageTitle";
 import OnOff from "./w-1/OnOff";
 import UncontrolledComponents from "./w-2/UncontrolledComponents";
 import ControlledComponents from "./w-2/ControlledComponents";
+import CustomSelect from "./w-2/CustomSelect/CustomSelect";
+import Parent from "./w-2/CustomSelect/Parent";
 
 const ReactLearning = () => {
     return (
         <>
             <PageTitle title={'React Learning'}/>
             <Accordion title={'Menu'}/>
-            <Accordion title={'Rules'}/>
-            <Rating/>
-            <Rating />
             <Rating/>
             <OnOff/>
-            <OnOff/>
-            <UncontrolledComponents/>
-            <ControlledComponents/>
+
+            <h1>Uncontrolled Components</h1><UncontrolledComponents/>
+            <h1>Controlled Components</h1><ControlledComponents/>
+            <h1>Custom Select</h1><Parent/>
+                123
+            <br/><br/>
+            <br/><br/>
+            <br/><br/>
+            <br/><br/>
+            <br/><br/><br/>
+            <br/><br/><br/>
+            <br/><br/><br/>
+            <br/><br/><br/>
+            <br/><br/><br/><br/>
         </>
     );
 };

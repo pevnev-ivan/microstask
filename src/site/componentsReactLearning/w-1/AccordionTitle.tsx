@@ -6,7 +6,7 @@ type PropsType = {
 
 const AccordionTitle = (props: PropsType) => {
     return (
-        <h3>
+        <h3 style={{color: 'whitesmoke', fontSize:'25px'}}>
             {props.title}
         </h3>
     );
