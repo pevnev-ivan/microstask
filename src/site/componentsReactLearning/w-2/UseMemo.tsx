@@ -30,7 +30,7 @@ const DifficultCounterExample = () => {
     if (a === 0) {resultB = 0}
     return (
         <div>
-
+            <UsersArrayExample/>
             <div>
                 <input value={a} onChange={(e) => setA(+e.currentTarget.value)}/>
                 <p style={{display: 'inline',color:'whitesmoke'}}>Result for A: {resultA}</p>
@@ -42,6 +42,45 @@ const DifficultCounterExample = () => {
         </div>
     );
 };
+
+const UsersRender = (props: {users: Array<string>}) => {
+    console.log('Users map fn')
+    return (
+        <div>
+            {props.users.map(e => <li>{e}</li>)}
+        </div>
+    )
+}
+
+
+
+const Users = React.memo(UsersRender)
+
+const UsersArrayExample = () => {
+
+    const addUser = () => {
+
+        setUsers([...users, 'Sveta'])
+    }
+
+    console.log('Main fn')
+    const [counter, setCounter] = useState(0)
+    const [users, setUsers] = useState(['Artem', 'Alex', 'Ivan', 'Katya'])
+
+    const usersArray = useMemo(() => {
+        return users.filter(e => e.toLowerCase().indexOf('a' ) > -1)
+    }, [users])
+
+    return (
+        <div>
+            <button onClick={() => {setCounter(counter + 1)}}>+</button>
+            <button onClick={() => addUser()}>+</button>
+            <p>{counter}</p>
+            <Users users={usersArray}/>
+        </div>
+    )
+
+}
 
 
 export default DifficultCounterExample;
