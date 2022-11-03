@@ -13,7 +13,7 @@ type PropsType = {
 
 
 const CustomSelect = (props: PropsType) => {
-    const [active, setActive] = useState(false)
+    const [active, setActive] = useState(true)
     const [hover, setHover] = useState(props.array[0].id)
 
     // useEffect(() => {
