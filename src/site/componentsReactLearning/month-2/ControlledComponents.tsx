@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useState} from 'react';
-import s from "../w-1/ReactW1.module.css";
+import s from "../month-1/ReactW1.module.css";
 
 type ControlledInputType = {
     onChangeHandle: (actualValue: string, type: string) => void

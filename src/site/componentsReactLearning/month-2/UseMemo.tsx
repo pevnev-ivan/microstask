@@ -13,21 +13,18 @@ const DifficultCounterExample = () => {
         for (let i = 1; i < a+1; i++) {
             let fake = 0;
             while (fake < 100000000) {fake++}
-
             tempResultA = i * tempResultA
-            console.log(tempResultA)
         }
         return tempResultA
     }, [a])
 
 
     for (let i = 1; i < b+1; i++) {
-
         resultB = i * resultB
-        console.log(resultB)
     }
     if (a === 0) {resultA = 0}
     if (a === 0) {resultB = 0}
+
     return (
         <div>
             <UsersArrayExample/>
@@ -44,10 +41,10 @@ const DifficultCounterExample = () => {
 };
 
 const UsersRender = (props: {users: Array<string>}) => {
-    console.log('Users map fn')
+    // console.log('Users map fn')
     return (
         <div>
-            {props.users.map(e => <li>{e}</li>)}
+            {props.users.map((e, index) => <li key={index}>{e}</li>)}
         </div>
     )
 }
@@ -59,11 +56,10 @@ const Users = React.memo(UsersRender)
 const UsersArrayExample = () => {
 
     const addUser = () => {
-
         setUsers([...users, 'Sveta'])
     }
 
-    console.log('Main fn')
+    // console.log('Main fn')
     const [counter, setCounter] = useState(0)
     const [users, setUsers] = useState(['Artem', 'Alex', 'Ivan', 'Katya'])
 

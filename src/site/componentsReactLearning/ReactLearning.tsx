@@ -1,12 +1,13 @@
 import React from 'react';
-import Accordion from "./w-1/Accordion";
-import Rating from "./w-1/Rating";
-import PageTitle from "./w-1/PageTitle";
-import OnOff from "./w-1/OnOff";
-import UncontrolledComponents from "./w-2/UncontrolledComponents";
-import ControlledComponents from "./w-2/ControlledComponents";
-import Parent from "./w-2/CustomSelect/Parent";
-import DifficultCounterExample from "./w-2/UseMemo";
+import Accordion from "./month-1/Accordion";
+import Rating from "./month-1/Rating";
+import PageTitle from "./month-1/PageTitle";
+import OnOff from "./month-1/OnOff";
+import UncontrolledComponents from "./month-2/UncontrolledComponents";
+import ControlledComponents from "./month-2/ControlledComponents";
+import Parent from "./month-2/CustomSelect/Parent";
+import DifficultCounterExample from "./month-2/UseMemo";
+import Month3 from "./month-3/Month-3";
 
 const ReactLearning = () => {
     return (
@@ -21,6 +22,7 @@ const ReactLearning = () => {
             <h1>Custom Select</h1><Parent/>
 
             <DifficultCounterExample/>
+            <Month3/>
         </>
     );
 };
