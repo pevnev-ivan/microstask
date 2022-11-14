@@ -1,7 +1,7 @@
 import React, {useCallback, useMemo, useState} from 'react';
 
 const BooksRender = (props: {books: Array<string>, addBook: () => void}) => {
-    console.log('Books map fn')
+    // console.log('Books map fn')
     return (
         <div>
             <button onClick={() => props.addBook()}>Add book</button>
@@ -14,7 +14,7 @@ const Books = React.memo(BooksRender)
 
 
 const UseCallbackExample = () => {
-    console.log('Main fn')
+    // console.log('Main fn')
 
     const [counter, setCounter] = useState(0)
     const [books, setBooks] = useState(['React', 'NodeJS', 'TypeScript', 'Redux'])
